@@ -95,7 +95,7 @@ const DraggableResizableText = (props) => {
           />
         ) : (
           <img
-            src={content} // Assuming content is the URL of the image
+            src={content} 
             alt="Overlay Image"
             className="w-32 h-32"
             onClick={handleSelect}

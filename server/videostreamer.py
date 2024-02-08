@@ -8,12 +8,12 @@ import os
 
 app = Flask(__name__)
 CORS(app)
-# Define the directory where HLS files are stored
+
 hls_directory = os.path.dirname(os.path.abspath(__file__))
 
 uri = ""
 
-# Create a new MongoClient
+
 client = MongoClient(uri, server_api=ServerApi('1'))
 
 # Check if the connection was successful
@@ -47,7 +47,7 @@ def create_overlay():
 @app.route('/overlays')
 def get_overlay():
     overlays = list(collection.find())
-    # Convert ObjectId to string for each overlay
+
     overlays = [{**overlay, '_id': str(overlay['_id'])} for overlay in overlays]
     if overlays:
         return jsonify(overlays), 200

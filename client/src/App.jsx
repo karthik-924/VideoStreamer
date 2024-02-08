@@ -67,13 +67,13 @@ function App() {
 
   const handleRemoveOverlay = () => {
     console.log(selectedOverlay);
-    if (!selectedOverlay) return; // No selected overlay to remove
+    if (!selectedOverlay) return; 
     const updatedOverlays = overlays.filter(overlay => overlay.id !== selectedOverlay);
     fetch(`http://localhost:5000/overlay/${selectedOverlay}`, {
       method: 'DELETE',
     });
     setOverlays(updatedOverlays);
-    setSelectedOverlay(null); // Reset selected overlay after removal
+    setSelectedOverlay(null); 
   };
 
   const renderOverlays = () => {
